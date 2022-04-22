@@ -28,4 +28,9 @@ docker-compose exec web python manage.py migrate
 docker-compose exec web python manage.py createsuperuser 
 ````
 
+### Install fixture
+````
+docker-compose exec web python manage.py loaddata products 
+````
+
 
