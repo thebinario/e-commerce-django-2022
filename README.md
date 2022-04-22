@@ -18,9 +18,14 @@ docker-compose exec web pytest --cov --cov-report=html
 ````
 
 ### Migrations
-````djangourlpath
+````
 docker-compose exec web python manage.py makemigrations
 docker-compose exec web python manage.py migrate
+````
+
+### Create super user
+````
+docker-compose exec web python manage.py createsuperuser 
 ````
 
 
