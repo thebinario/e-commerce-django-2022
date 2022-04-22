@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
+import cart.apps
 import pages.apps
 import products.apps
 import users.apps
@@ -39,11 +40,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
+    # apps de terceiros
+    'widget_tweaks',
     # my apps
     'users.apps.UsersConfig',
     'pages.apps.PagesConfig',
     'products.apps.ProductConfig',
+    'cart.apps.CartConfig',
 
 ]
 
@@ -139,3 +142,9 @@ AUTH_USER_MODEL = "users.User"
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "media"
+
+
+# Cart
+
+CART_SESSION_ID = "cart"
+CART_ITEM_MAX_QUANTITY = 20
